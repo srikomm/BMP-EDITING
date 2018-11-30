@@ -1,7 +1,8 @@
 #include "qdbmp.h"
 
+
 void negative(BMP* input, BMP* output, UINT width, UINT height){
-	UCHAR r, g, b, grey;
+	UCHAR r, g, b;
 	for (UINT x = 0; x < width; ++x){
 		for (UINT y = 0; y < height; ++y){
 			BMP_GetPixelRGB(input, x, y, &r, &g, &b);
@@ -18,6 +19,19 @@ void grayscale_avg(BMP* input, BMP* output, UINT width, UINT height){
 		for (UINT y = 0; y < height; ++y){
 			BMP_GetPixelRGB(input, x, y, &r, &g, &b);
 			grey = (r + g + b) / 3;
+			BMP_SetPixelRGB(output, x, y, grey, grey, grey);
+		}
+	}
+	return;
+}
+
+
+void grayscale_luma(BMP* input, BMP* output, UINT width, UINT height){
+	UCHAR r, g, b, grey;
+	for (UINT x = 0; x < width; ++x){
+		for (UINT y = 0; y < height; ++y){
+			BMP_GetPixelRGB(input, x, y, &r, &g, &b);
+			grey = r*0.2126 + g*0.7152 + b*0.0722;
 			BMP_SetPixelRGB(output, x, y, grey, grey, grey);
 		}
 	}
