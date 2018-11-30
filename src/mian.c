@@ -65,6 +65,32 @@ void grayscale_desaturation(BMP* input, BMP* output, UINT width, UINT height){
 }
 
 
+void grayscale_decomposition_max(BMP* input, BMP* output, UINT width, UINT height){
+	UCHAR r, g, b, grey;
+	for (UINT x = 0; x < width; ++x){
+		for (UINT y = 0; y < height; ++y){
+			BMP_GetPixelRGB(input, x, y, &r, &g, &b);
+			grey = max(r, g, b);
+			BMP_SetPixelRGB(output, x, y, grey, grey, grey);
+		}
+	}
+	return;
+}
+
+
+void grayscale_decomposition_min(BMP* input, BMP* output, UINT width, UINT height){
+	UCHAR r, g, b, grey;
+	for (UINT x = 0; x < width; ++x){
+		for (UINT y = 0; y < height; ++y){
+			BMP_GetPixelRGB(input, x, y, &r, &g, &b);
+			grey = min(r, g, b);
+			BMP_SetPixelRGB(output, x, y, grey, grey, grey);
+		}
+	}
+	return;
+}
+
+
 void main(){
 	BMP *input, *output;
 	UCHAR r, g, b, grey;
