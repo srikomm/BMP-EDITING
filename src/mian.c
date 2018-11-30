@@ -1,6 +1,20 @@
 #include "qdbmp.h"
 
 
+UINT max(UINT r, UINT g, UINT b){
+	if ((r >= g) && (r >= b))	return r;
+	else if ((g >= r) && (g >= b))	return g;
+	return b;
+}
+
+
+UINT min(UINT r, UINT g, UINT b){
+	if ((r <= g) && (r <= b))	return r;
+	else if ((g <= r) && (g <= b))	return g;
+	return b;
+}
+
+
 void negative(BMP* input, BMP* output, UINT width, UINT height){
 	UCHAR r, g, b;
 	for (UINT x = 0; x < width; ++x){
@@ -11,7 +25,6 @@ void negative(BMP* input, BMP* output, UINT width, UINT height){
 	}
 	return;
 }
-
 
 void grayscale_avg(BMP* input, BMP* output, UINT width, UINT height){
 	UCHAR r, g, b, grey;
@@ -39,6 +52,19 @@ void grayscale_luma(BMP* input, BMP* output, UINT width, UINT height){
 }
 
 
+void grayscale_desaturation(BMP* input, BMP* output, UINT width, UINT height){
+	UCHAR r, g, b, grey;
+	for (UINT x = 0; x < width; ++x){
+		for (UINT y = 0; y < height; ++y){
+			BMP_GetPixelRGB(input, x, y, &r, &g, &b);
+			grey = (max(r, g, b) + min(r, g, b)) / 2;
+			BMP_SetPixelRGB(output, x, y, grey, grey, grey);
+		}
+	}
+	return;
+}
+
+
 void main(){
 	BMP *input, *output;
 	UCHAR r, g, b, grey;
@@ -46,7 +72,7 @@ void main(){
 	UINT x, y;
 	USHORT depth;
 
-	input = BMP_ReadFile("Inputs//swirl.bmp");
+	input = BMP_ReadFile("Inputs//fish.bmp");
 	BMP_CHECK_ERROR(stderr, -1);
 
 	width = BMP_GetWidth(input);
@@ -55,9 +81,9 @@ void main(){
 
 	output = BMP_Create(width, height, depth);
 
-	negative(input, output, width, height);
+	grayscale_desaturation(input, output, width, height);
 
-	BMP_WriteFile(output, "Negative//swirl_neg.bmp");
+	BMP_WriteFile(output, "Grayscale//fish_desaturation.bmp");
 	BMP_CHECK_ERROR(stderr, -2);
 
 	BMP_Free(input);
