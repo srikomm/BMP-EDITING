@@ -12,6 +12,19 @@ void negative(BMP* input, BMP* output, UINT width, UINT height){
 }
 
 
+void grayscale_avg(BMP* input, BMP* output, UINT width, UINT height){
+	UCHAR r, g, b, grey;
+	for (UINT x = 0; x < width; ++x){
+		for (UINT y = 0; y < height; ++y){
+			BMP_GetPixelRGB(input, x, y, &r, &g, &b);
+			grey = (r + g + b) / 3;
+			BMP_SetPixelRGB(output, x, y, grey, grey, grey);
+		}
+	}
+	return;
+}
+
+
 void main(){
 	BMP *input, *output;
 	UCHAR r, g, b, grey;
