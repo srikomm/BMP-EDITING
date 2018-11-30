@@ -91,6 +91,45 @@ void grayscale_decomposition_min(BMP* input, BMP* output, UINT width, UINT heigh
 }
 
 
+void grayscale_scc_red(BMP* input, BMP* output, UINT width, UINT height){
+	UCHAR r, g, b, grey;
+	for (UINT x = 0; x < width; ++x){
+		for (UINT y = 0; y < height; ++y){
+			BMP_GetPixelRGB(input, x, y, &r, &g, &b);
+			grey = r;
+			BMP_SetPixelRGB(output, x, y, grey, grey, grey);
+		}
+	}
+	return;
+}
+
+
+void grayscale_scc_green(BMP* input, BMP* output, UINT width, UINT height){
+	UCHAR r, g, b, grey;
+	for (UINT x = 0; x < width; ++x){
+		for (UINT y = 0; y < height; ++y){
+			BMP_GetPixelRGB(input, x, y, &r, &g, &b);
+			grey = g;
+			BMP_SetPixelRGB(output, x, y, grey, grey, grey);
+		}
+	}
+	return;
+}
+
+
+void grayscale_scc_blue(BMP* input, BMP* output, UINT width, UINT height){
+	UCHAR r, g, b, grey;
+	for (UINT x = 0; x < width; ++x){
+		for (UINT y = 0; y < height; ++y){
+			BMP_GetPixelRGB(input, x, y, &r, &g, &b);
+			grey = b;
+			BMP_SetPixelRGB(output, x, y, grey, grey, grey);
+		}
+	}
+	return;
+}
+
+
 void main(){
 	BMP *input, *output;
 	UCHAR r, g, b, grey;
@@ -107,9 +146,9 @@ void main(){
 
 	output = BMP_Create(width, height, depth);
 
-	grayscale_desaturation(input, output, width, height);
+	grayscale_scc_green(input, output, width, height);
 
-	BMP_WriteFile(output, "Grayscale//fish_desaturation.bmp");
+	BMP_WriteFile(output, "Grayscale//fish_scc_green.bmp");
 	BMP_CHECK_ERROR(stderr, -2);
 
 	BMP_Free(input);
