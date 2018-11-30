@@ -130,6 +130,22 @@ void grayscale_scc_blue(BMP* input, BMP* output, UINT width, UINT height){
 }
 
 
+void grayscale_custom_shades_of_grey(BMP* input, BMP* output, UINT width, UINT height, UINT noOfShades){
+	if (noOfShades < 2 || noOfShades >256)	return;
+	UCHAR r, g, b, grey, ConversionFactor, AverageValue;
+	for (UINT x = 0; x < width; ++x){
+		for (UINT y = 0; y < height; ++y){
+			BMP_GetPixelRGB(input, x, y, &r, &g, &b);
+			ConversionFactor = 255 / (noOfShades - 1);
+			AverageValue = (r + g + b) / 3;
+			grey = (UINT)((AverageValue / ConversionFactor) + 0.5) * ConversionFactor;
+			BMP_SetPixelRGB(output, x, y, grey, grey, grey);
+		}
+	}
+	return;
+}
+
+
 void main(){
 	BMP *input, *output;
 	UCHAR r, g, b, grey;
@@ -146,9 +162,9 @@ void main(){
 
 	output = BMP_Create(width, height, depth);
 
-	grayscale_scc_green(input, output, width, height);
+	grayscale_custom_shades_of_grey(input, output, width, height, 256);
 
-	BMP_WriteFile(output, "Grayscale//fish_scc_green.bmp");
+	BMP_WriteFile(output, "Grayscale//fish_256_shades_of_grey.bmp");
 	BMP_CHECK_ERROR(stderr, -2);
 
 	BMP_Free(input);
