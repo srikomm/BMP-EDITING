@@ -57,8 +57,31 @@ For better understanding of the SCC method, I am including another example here.
 <b>Original Image</b>
 ![rgb.bmp](src/Inputs/rgb.bmp?raw=true "RGB.bmp")
 <br></br><b>SCC Red</b>
-![rgb.bmp](src/Outputs/rgb_red.bmp?raw=true "RGB Red.bmp")
+![rgb_red.bmp](src/Outputs/rgb_red.bmp?raw=true "RGB Red.bmp")
 <br></br><b>SCC Green</b>
-![rgb.bmp](src/Outputs/rgb_green.bmp?raw=true "RGB Green.bmp")
+![rgb_green.bmp](src/Outputs/rgb_green.bmp?raw=true "RGB Green.bmp")
 <br></br><b>SCC Blue</b>
-![rgb.bmp](src/Outputs/rgb_red.bmp?raw=true "RGB Blue.bmp")
+![rgb_blue.bmp](src/Outputs/rgb_blue.bmp?raw=true "RGB Blue.bmp")
+
+<h2><a href="https://github.com/SRIpandu1729/BMP-EDITING/blob/50ad32632ec124878991ebb7e5ee40563ed929fe/src/mian.c#L133">Custom shades of grey</a></h2>
+<br></br>In this method, the greyscale image is generated based on the number of shades of grey we define.
+As the number of shades of grey increases the image gets better and better.
+
+<b>2 shades of grey</b>
+![fish_2_shades_of_grey.bmp](src/Outputs/fish_2_shades_of_grey.bmp?raw=true "FISH 2 Shades of Grey.bmp")
+<b>3 shades of grey</b>
+![fish_3_shades_of_grey.bmp](src/Outputs/fish_3_shades_of_grey.bmp?raw=true "FISH 3 Shades of Grey.bmp")
+<b>4 shades of grey</b>
+![fish_4_shades_of_grey.bmp](src/Outputs/fish_4_shades_of_grey.bmp?raw=true "FISH 4 Shades of Grey.bmp")
+<b>8 shades of grey</b>
+![fish_8_shades_of_grey.bmp](src/Outputs/fish_8_shades_of_grey.bmp?raw=true "FISH 8 Shades of Grey.bmp")
+<b>16 shades of grey</b>
+![fish_16_shades_of_grey.bmp](src/Outputs/fish_16_shades_of_grey.bmp?raw=true "FISH 16 Shades of Grey.bmp")
+<b>32 shades of grey</b>
+![fish_32_shades_of_grey.bmp](src/Outputs/fish_32_shades_of_grey.bmp?raw=true "FISH 32 Shades of Grey.bmp")
+<b>64 shades of grey</b>
+![fish_64_shades_of_grey.bmp](src/Outputs/fish_64_shades_of_grey.bmp?raw=true "FISH 64 Shades of Grey.bmp")
+<b>128 shades of grey</b>
+![fish_128_shades_of_grey.bmp](src/Outputs/fish_128_shades_of_grey.bmp?raw=true "FISH 128 Shades of Grey.bmp")
+<b>256 shades of grey</b>
+![fish_256_shades_of_grey.bmp](src/Outputs/fish_256_shades_of_grey.bmp?raw=true "FISH 256 Shades of Grey.bmp")
