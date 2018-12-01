@@ -51,3 +51,14 @@ This uses the green channel directly as gray.
 This uses the blue channel directly as gray.
 
 ![fish_scc_blue.bmp](src/Outputs/fish_scc_blue.bmp?raw=true "Fish SCC Blue.bmp")
+
+<br></br>
+For better understanding of the SCC method, I am including another example here.
+<b>Original Image</b>
+![rgb.bmp](src/Inputs/rgb.bmp?raw=true "RGB.bmp")
+<br></br><b>SCC Red</b>
+![rgb.bmp](src/Outputs/rgb_red.bmp?raw=true "RGB Red.bmp")
+<br></br><b>SCC Green</b>
+![rgb.bmp](src/Outputs/rgb_green.bmp?raw=true "RGB Green.bmp")
+<br></br><b>SCC Blue</b>
+![rgb.bmp](src/Outputs/rgb_red.bmp?raw=true "RGB Blue.bmp")
