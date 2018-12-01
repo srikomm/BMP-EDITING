@@ -25,3 +25,14 @@ This method uses an algorithm specified by the original ITU-R recommendation (BT
 This method takes the average of the max and min values of a pixel and assigns it as the grey value.
 
 ![fish_desaturation.bmp](src/Outputs/fish_desaturation.bmp?raw=true "Fish Desaturation.bmp")
+
+<h2>Decomposition</h2>
+There are two ways to decompose an image.
+<h3><a href="">Max Decomposition</a></h3>
+This uses the max value of all the 3 channels for the grey value.
+
+![fish_decomposition_max.bmp](src/Outputs/fish_decomposition_max.bmp?raw=true "Fish Decomposition Max.bmp")
+<h3><a href="">Min Decomposition</a></h3>
+This uses the min value of all the 3 channels for the grey value.
+
+![fish_decomposition_min.bmp](src/Outputs/fish_decomposition_min.bmp?raw=true "Fish Decomposition Min.bmp")
