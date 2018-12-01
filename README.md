@@ -20,3 +20,8 @@ In this method grey value is simply the average of all 3 RGB values of a pixel.
 This method uses an algorithm specified by the original ITU-R recommendation (BT.709, specifically) to calculate the grey value.
 
 ![fish_luma.bmp](src/Outputs/fish_luma.bmp?raw=true "Fish Luma.bmp")
+
+<h2><a href="https://github.com/SRIpandu1729/BMP-EDITING/blob/50ad32632ec124878991ebb7e5ee40563ed929fe/src/mian.c#L55">Desaturation</a></h2>
+This method takes the average of the max and min values of a pixel and assigns it as the grey value.
+
+![fish_desaturation.bmp](src/Outputs/fish_desaturation.bmp?raw=true "Fish Desaturation.bmp")
