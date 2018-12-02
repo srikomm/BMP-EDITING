@@ -80,38 +80,15 @@ void grayscale_decomposition(BMP* input, BMP* output, UINT width, UINT height, U
 }
 
 
-void grayscale_scc_red(BMP* input, BMP* output, UINT width, UINT height){
+void grayscale_scc(BMP* input, BMP* output, UINT width, UINT height, UINT color){
 	UCHAR r, g, b, grey;
 	for (UINT x = 0; x < width; ++x){
 		for (UINT y = 0; y < height; ++y){
 			BMP_GetPixelRGB(input, x, y, &r, &g, &b);
-			grey = r;
-			BMP_SetPixelRGB(output, x, y, grey, grey, grey);
-		}
-	}
-	return;
-}
-
-
-void grayscale_scc_green(BMP* input, BMP* output, UINT width, UINT height){
-	UCHAR r, g, b, grey;
-	for (UINT x = 0; x < width; ++x){
-		for (UINT y = 0; y < height; ++y){
-			BMP_GetPixelRGB(input, x, y, &r, &g, &b);
-			grey = g;
-			BMP_SetPixelRGB(output, x, y, grey, grey, grey);
-		}
-	}
-	return;
-}
-
-
-void grayscale_scc_blue(BMP* input, BMP* output, UINT width, UINT height){
-	UCHAR r, g, b, grey;
-	for (UINT x = 0; x < width; ++x){
-		for (UINT y = 0; y < height; ++y){
-			BMP_GetPixelRGB(input, x, y, &r, &g, &b);
-			grey = b;
+			if (color == 0)grey = r;
+			else if (color == 1)grey = g;
+			else if (color == 2)grey = b;
+			else return;
 			BMP_SetPixelRGB(output, x, y, grey, grey, grey);
 		}
 	}
