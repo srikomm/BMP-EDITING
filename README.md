@@ -26,28 +26,28 @@ This method takes the average of the max and min values of a pixel and assigns i
 
 ![fish_desaturation.bmp](src/Outputs/fish_desaturation.bmp?raw=true "Fish Desaturation.bmp")
 
-<h2>Decomposition</h2>
+<h2><a href="https://github.com/SRIpandu1729/BMP-EDITING/blob/b4683934fa0cbd964ffdbf85fe79d254fc28ea7d/src/mian.c#L68">Decomposition</a></h2>
 There are two ways to decompose an image.
-<h3><a href="https://github.com/SRIpandu1729/BMP-EDITING/blob/50ad32632ec124878991ebb7e5ee40563ed929fe/src/mian.c#L68">Max Decomposition</a></h3>
+<h3>Max Decomposition</h3>
 This uses the max value of all the 3 channels for the grey value.
 
 ![fish_decomposition_max.bmp](src/Outputs/fish_decomposition_max.bmp?raw=true "Fish Decomposition Max.bmp")
-<h3><a href="https://github.com/SRIpandu1729/BMP-EDITING/blob/50ad32632ec124878991ebb7e5ee40563ed929fe/src/mian.c#L81">Min Decomposition</a></h3>
+<h3>Min Decomposition</h3>
 This uses the min value of all the 3 channels for the grey value.
 
 ![fish_decomposition_min.bmp](src/Outputs/fish_decomposition_min.bmp?raw=true "Fish Decomposition Min.bmp")
 
-<h2>Single Color Channel</h2>
+<h2><a href="https://github.com/SRIpandu1729/BMP-EDITING/blob/b4683934fa0cbd964ffdbf85fe79d254fc28ea7d/src/mian.c#L83">Single Color Channel</a></h2>
 This method uses data from a single color channel.
-<h3><a href="https://github.com/SRIpandu1729/BMP-EDITING/blob/50ad32632ec124878991ebb7e5ee40563ed929fe/src/mian.c#L94">SCC Red</a></h3>
+<h3>SCC Red</h3>
 This uses the red channel directly as gray.
 
 ![fish_scc_red.bmp](src/Outputs/fish_scc_red.bmp?raw=true "Fish SCC Red.bmp")
-<h3><a href="https://github.com/SRIpandu1729/BMP-EDITING/blob/50ad32632ec124878991ebb7e5ee40563ed929fe/src/mian.c#L107">SCC Green</a></h3>
+<h3>SCC Green</h3>
 This uses the green channel directly as gray.
 
 ![fish_scc_green.bmp](src/Outputs/fish_scc_green.bmp?raw=true "Fish SCC Green.bmp")
-<h3><a href="https://github.com/SRIpandu1729/BMP-EDITING/blob/50ad32632ec124878991ebb7e5ee40563ed929fe/src/mian.c#L120">SCC Blue</a></h3>
+<h3>SCC Blue</h3>
 This uses the blue channel directly as gray.
 
 ![fish_scc_blue.bmp](src/Outputs/fish_scc_blue.bmp?raw=true "Fish SCC Blue.bmp")
